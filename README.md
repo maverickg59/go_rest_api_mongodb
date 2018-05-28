@@ -1,8 +1,8 @@
-# REST API IN GOLANG WITH MONGODB, GORILLA MUX, AND MGO
+## REST API IN GOLANG WITH MONGODB, GORILLA MUX, AND MGO
 
-## A hospital needs an API interface into their patient records database (MongoDB). Patient information to get you started is found in the MOCK_DATA.json file and is a json array containing information for two patients.
+### A hospital needs an API interface into their patient records database (MongoDB). Patient information to get you started is found in the MOCK_DATA.json file and is a json array containing information for two patients.
 
-### JSON Data Model
+#### JSON Data Model
 ```
 {
   "id": 3,
@@ -26,34 +26,34 @@
 }
 ```
 
-### POST:
+#### POST:
 ```
 curl -d '{"id":1,"first_name":"Gardanzo","last_name":"Plentenao","gender":"Male","phone_number":"555-555-5555","email":"thisperson0@blahblah.it","address":"9 Hot Springs Terrace","visit_date":"7/23/2017","diagnosis":"T34G","drug_code":"15060-0GT3","additional_information":[{"notes":"Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.","new_patient":false,"race":"Hispanic","ssn":"555-55-5555"}]}' -H "Content-Type: application/json" -X POST http://localhost:8080/patients
 ```
 
-### GET ALL:
+#### GET ALL:
 ```
 curl http://localhost:8080/patients
 ```
 
-### GET ONE BY ID:
+#### GET ONE BY ID:
 ```
 curl http://localhost:8080/patients/1
 ```
 
-### PUT (last name modified to test update):
+#### PUT (last name modified to test update):
 ```
 curl -d '{"id":1,"first_name":"Gardanzo","last_name":"Plantenao","gender":"Male","phone_number":"555-555-5555","email":"thisperson0@blahblah.it","address":"9 Hot Springs Terrace","visit_date":"7/23/2017","diagnosis":"T34G","drug_code":"15060-0GT3","additional_information":[{"notes":"Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.","new_patient":false,"race":"Hispanic","ssn":"555-55-5555"}]}' -H "Content-Type: application/json" -X PUT http://localhost:8080/patients/1
 ```
 
-### GET BY ATTRIBUTE TERM:
+#### GET BY ATTRIBUTE TERM:
 ```
 curl -G -v "http://localhost:8080/search" --data-urlencode "first_name=Gardanzo"
 curl -G -v "http://localhost:8080/search" --data-urlencode "gender=Male"
 curl -G -v "http://localhost:8080/search" --data-urlencode "last_name=Plantenao"
 ```
 
-### DELETE ONE BY ID:
+#### DELETE ONE BY ID:
 ```
 curl -X DELETE http://localhost:8080/patients/1
 ```
