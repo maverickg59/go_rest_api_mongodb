@@ -2,7 +2,7 @@
 
 ### A hospital needs an API interface into their patient records database (MongoDB). Patient information is found in the DATA.json file containing an array of information for two patients.
 
-#### JSON Data Model
+#### JSON Data Model:
 ```
 {
   "id": 3,
