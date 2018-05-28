@@ -1,6 +1,6 @@
 ## REST API IN GOLANG WITH MONGODB, GORILLA MUX, AND MGO
 
-### A hospital needs an API interface into their patient records database (MongoDB). Patient information to get you started is found in the MOCK_DATA.json file and is a json array containing information for two patients.
+### A hospital needs an API interface into their patient records database (MongoDB). Patient information to get you started is found in the DATA.json file containing an array of information for two patients.
 
 #### JSON Data Model
 ```
